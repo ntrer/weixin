@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="utf-8">
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <style>
-    .wxtip{background: rgba(0,0,0,0.8); text-align: center; position: fixed; left:0; top: 0; width: 100%; height: 100%; z-index: 998; display: none;}
-    .wxtip-icon{width: 52px; height: 67px;  display: block; position: absolute; right: 20px; top: 20px;}
-    .wxtip-txt{margin-top: 107px; color: #fff; font-size: 16px; line-height: 1.5;}
-  </style>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <style>
+        .logo{margin:100px auto 300px}
+        .wxtip{background: rgba(0,0,0,0.8); text-align: center; position: fixed; left:0; top: 0; width: 100%; height: 100%; z-index: 998; display: none;}
+        .wxtip-icon{width: 52px; height: 67px; background: url(img/arrow.png) no-repeat;  display: block; position: absolute; right: 20px; top: 20px;}
+        .wxtip-txt{margin-top: 107px; color: #fff; font-size: 16px; line-height: 1.5;}
+    </style>
 </head>
 <body>
-<!-- Swiper -->
-<a href="http://caibaojian.com/test.apk" id="JdownApp">µã»÷ÏÂÔØAPP</a>
-<a href="http://caibaojian.com/test.apk" id="JdownApp2" class="btn-warn">µã»÷ÏÂÔØAPP2</a>
+<img src="img/icon.png" class="logo">
+<a href="http://caibaojian.com/test.apk" id="JdownApp">ä¸‹è½½å®‰å“APP</a>
+<a href="http://caibaojian.com/test.apk" id="JdownApp2" class="btn-warn">ä¸‹è½½IOS APP</a>
 <div class="wxtip" id="JweixinTip">
-  <span class="wxtip-icon"></span>
-  <p class="wxtip-txt">µã»÷ÓÒÉÏ½Ç<br/>Ñ¡ÔñÔÚä¯ÀÀÆ÷ÖĞ´ò¿ª</p>
+    <span class="wxtip-icon"></span>
+    <p class="wxtip-txt">ç‚¹å‡»å³ä¸Šè§’<br/>é€‰æ‹©åœ¨æµè§ˆå™¨ä¸­æ‰“å¼€</p>
 </div>
 <script>
-  function weixinTip(ele){
-    var ua = navigator.userAgent;
-    var isWeixin = !!/MicroMessenger/i.test(ua);
-    if(isWeixin){
-      ele.onclick=function(e){
-        window.event? window.event.returnValue = false : e.preventDefault();
-        document.getElementById('JweixinTip').style.display='block';
-      }
-      document.getElementById('JweixinTip').onclick=function(){
-        this.style.display='none';
-      }
+    function weixinTip(ele){
+        var ua = navigator.userAgent;
+        var isWeixin = !!/MicroMessenger/i.test(ua);
+        if(isWeixin){
+            ele.onclick=function(e){
+                window.event? window.event.returnValue = false : e.preventDefault();
+                document.getElementById('JweixinTip').style.display='block';
+            }
+            document.getElementById('JweixinTip').onclick=function(){
+                this.style.display='none';
+            }
+        }
     }
-  }
-  var btn1 = document.getElementById('JdownApp');//ÏÂÔØÒ»
-  weixinTip(btn1);
-  var btn2 = document.getElementById('JdownApp2'); //ÏÂÔØ¶ş
-  weixinTip(btn2);
+    var btn1 = document.getElementById('JdownApp');//ä¸‹è½½ä¸€
+    weixinTip(btn1);
+    var btn2 = document.getElementById('JdownApp2'); //ä¸‹è½½äºŒ
+    weixinTip(btn2);
 </script>
 </body>
 </html>
